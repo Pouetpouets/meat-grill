@@ -123,10 +123,16 @@ body {
 .hero-doodles {
   position: absolute; inset: 0;
   background: url('img/doodles.png') center/cover no-repeat;
-  opacity: 0.35;
+  opacity: 0.22;
   pointer-events: none;
 }
-.hero-content { position: relative; z-index: 2; padding: 2rem; max-width: 800px; }
+.hero-content {
+  position: relative; z-index: 2;
+  padding: 3rem 2.5rem;
+  max-width: 800px;
+  background: radial-gradient(ellipse at center, rgba(253,246,238,0.85) 0%, rgba(253,246,238,0.4) 65%, transparent 80%);
+  border-radius: 40px;
+}
 .hero-badge {
   display: inline-block;
   font-size: 0.72rem; font-weight: 700; letter-spacing: 0.2em;
@@ -145,6 +151,7 @@ body {
   letter-spacing: -0.02em;
   margin-bottom: 2rem;
   color: var(--text);
+  text-shadow: 0 2px 20px rgba(253,246,238,0.8);
 }
 .hero-title .line { display: block; }
 .hero-title .accent { color: var(--accent); }
@@ -254,6 +261,63 @@ body {
   letter-spacing: 0.06em; text-transform: uppercase;
   opacity: 0.6;
 }
+
+/* ---- REVIEWS ---- */
+.section-reviews {
+  padding: 4rem 0;
+  background: var(--bg);
+  text-align: center;
+}
+.reviews-card {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 2.5rem 4rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-shadow: var(--shadow-md);
+}
+.reviews-stars {
+  display: flex; gap: 0.25rem;
+  font-size: 2rem;
+  line-height: 1;
+}
+.star { color: #f4b740; }
+.star-almost {
+  background: linear-gradient(90deg, #f4b740 80%, #d5cec4 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.reviews-score {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  line-height: 1;
+}
+.reviews-max {
+  font-size: 1.5rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+.reviews-label {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+.reviews-link {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.reviews-link:hover { opacity: 0.7; }
 
 /* ---- STORY ---- */
 .section-story {

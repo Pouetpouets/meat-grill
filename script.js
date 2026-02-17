@@ -17,31 +17,49 @@
   const tabsEl = document.getElementById('menu-tabs');
   const contentEl = document.getElementById('menu-content');
 
-  cats.forEach((cat, i) => {
-    const btn = document.createElement('button');
-    btn.className = 'tab' + (i === 0 ? ' active' : '');
-    btn.dataset.tab = cat.id;
-    btn.textContent = cat.label;
-    tabsEl.appendChild(btn);
-
-    const grid = document.createElement('div');
-    grid.className = 'menu-category' + (i !== 0 ? ' hidden' : '');
-    grid.dataset.category = cat.id;
-
-    cat.items.forEach(item => {
-      const card = document.createElement('div');
-      card.className = 'menu-item';
-      card.innerHTML = `
+  function buildCard(item) {
+    const card = document.createElement('div');
+    card.className = 'menu-item' + (item.img ? ' has-img' : '');
+    card.innerHTML = `
+      ${item.img ? `<div class="menu-item-img"><img src="${item.img}" alt="${item.name}" loading="lazy" /></div>` : ''}
+      <div class="menu-item-body">
         <div class="menu-item-header">
           <h3>${item.name}</h3>
           <span class="price">${item.price}</span>
         </div>
         <p>${item.desc}</p>
         ${item.badge ? `<span class="badge${item.badgeType ? ' ' + item.badgeType : ''}">${item.badge}</span>` : ''}
-      `;
-      grid.appendChild(card);
-    });
+      </div>
+    `;
+    return card;
+  }
 
+  // "Tous" tab
+  const allBtn = document.createElement('button');
+  allBtn.className = 'tab active';
+  allBtn.dataset.tab = 'all';
+  allBtn.textContent = '✨ Tous';
+  tabsEl.appendChild(allBtn);
+
+  // All items grid
+  const allGrid = document.createElement('div');
+  allGrid.className = 'menu-category';
+  allGrid.dataset.category = 'all';
+  cats.forEach(cat => cat.items.forEach(item => allGrid.appendChild(buildCard(item))));
+  contentEl.appendChild(allGrid);
+
+  // Per-category tabs & grids
+  cats.forEach((cat) => {
+    const btn = document.createElement('button');
+    btn.className = 'tab';
+    btn.dataset.tab = cat.id;
+    btn.textContent = cat.label;
+    tabsEl.appendChild(btn);
+
+    const grid = document.createElement('div');
+    grid.className = 'menu-category hidden';
+    grid.dataset.category = cat.id;
+    cat.items.forEach(item => grid.appendChild(buildCard(item)));
     contentEl.appendChild(grid);
   });
 

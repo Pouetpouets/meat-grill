@@ -8,10 +8,10 @@ const MENU_DATA = {
       label: "🥙 Kebabs",
       items: [
         { name: "Kebab Classique", price: "7.50€", desc: "Viande grillée, salade, tomates, oignons, sauce blanche", badge: "Best-seller", img: "https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=400&h=300&fit=crop" },
-        { name: "Kebab Fromage", price: "8.50€", desc: "Viande grillée, double fromage fondu, salade, sauce", img: "https://images.unsplash.com/photo-1613564834361-9436948817d1?w=400&h=300&fit=crop" },
-        { name: "Kebab Galette", price: "8.00€", desc: "En galette de blé, viande, crudités, sauce au choix", img: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=400&h=300&fit=crop" },
-        { name: "Kebab Meat Grill", price: "10.00€", desc: "Double viande, double fromage, oignons caramélisés, sauce spéciale", badge: "🔥 Spécialité", badgeType: "hot", img: "https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=400&h=300&fit=crop" },
-        { name: "Kebab Falafel", price: "8.00€", desc: "Falafels maison, houmous, crudités, sauce tahini", badge: "🌱 Végé", badgeType: "veg", img: "https://images.unsplash.com/photo-1558301211-0d8c8ddee6ec?w=400&h=300&fit=crop" }
+        { name: "Kebab Fromage", price: "8.50€", desc: "Viande grillée, double fromage fondu, salade, sauce", img: "https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=400&h=300&fit=crop" },
+        { name: "Kebab Galette", price: "8.00€", desc: "En galette de blé, viande, crudités, sauce au choix", img: "https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=400&h=300&fit=crop" },
+        { name: "Kebab Meat Grill", price: "10.00€", desc: "Double viande, double fromage, oignons caramélisés, sauce spéciale", badge: "🔥 Spécialité", badgeType: "hot", img: "https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=400&h=300&fit=crop" },
+        { name: "Kebab Falafel", price: "8.00€", desc: "Falafels maison, houmous, crudités, sauce tahini", badge: "🌱 Végé", badgeType: "veg", img: "https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=400&h=300&fit=crop" }
       ]
     },
     {

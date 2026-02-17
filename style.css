@@ -82,7 +82,7 @@ body {
   letter-spacing: 0.08em; text-transform: uppercase;
 }
 .logo-flame { font-size: 1.2rem; }
-.nav-links { display: flex; gap: 2.2rem; }
+.nav-links { display: flex; gap: 2.2rem; align-items: center; }
 .nav-links a {
   color: var(--text-muted); text-decoration: none;
   font-size: 0.85rem; font-weight: 600;
@@ -114,6 +114,7 @@ body {
   display: flex; align-items: center; justify-content: center;
   text-align: center;
   overflow: hidden;
+  padding-top: 68px; /* compensate for fixed nav */
 }
 .hero-bg {
   position: absolute; inset: 0;

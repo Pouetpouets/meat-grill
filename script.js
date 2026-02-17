@@ -1,8 +1,9 @@
 // ============================================
-// Render menu from MENU_DATA (menu-data.js)
+// MEAT GRILL — Animations + Dynamic rendering
 // ============================================
 (function() {
-  // Support preview from admin panel
+
+  // ---- Preview mode (admin panel) ----
   if (new URLSearchParams(location.search).has('preview')) {
     try {
       const preview = JSON.parse(localStorage.getItem('MENU_DATA_PREVIEW'));
@@ -13,30 +14,26 @@
   const info = MENU_DATA.info;
   const cats = MENU_DATA.categories;
 
-  // Hero
+  // ---- Render hero ----
   document.getElementById('hero-tag').textContent = `COPPONEX · DEPUIS ${info.since}`;
-  document.getElementById('hero-title').innerHTML = `${info.tagline.split('&')[0]}<br><span class="accent">&${info.tagline.split('&')[1] || ' grillades'}</span>`;
-  document.getElementById('hero-sub').textContent = info.subtitle;
-  if (info.phone) {
-    document.getElementById('hero-phone').href = `tel:${info.phone}`;
-  }
+  const parts = info.tagline.split('&');
+  document.getElementById('hero-phone').href = info.phone ? `tel:${info.phone}` : '#contact';
 
-  // Contact
-  document.getElementById('contact-address').innerHTML = `<strong>${info.address}</strong><br>${info.city}`;
+  // ---- Render contact ----
+  document.getElementById('contact-address').innerHTML =
+    `<strong>${info.address}</strong><br>${info.city}`;
 
-  // Menu tabs
+  // ---- Render menu ----
   const tabsEl = document.getElementById('menu-tabs');
   const contentEl = document.getElementById('menu-content');
 
   cats.forEach((cat, i) => {
-    // Tab
     const btn = document.createElement('button');
     btn.className = 'tab' + (i === 0 ? ' active' : '');
     btn.dataset.tab = cat.id;
     btn.textContent = cat.label;
     tabsEl.appendChild(btn);
 
-    // Category grid
     const grid = document.createElement('div');
     grid.className = 'menu-category' + (i !== 0 ? ' hidden' : '');
     grid.dataset.category = cat.id;
@@ -58,19 +55,35 @@
     contentEl.appendChild(grid);
   });
 
-  // Tab clicks
-  tabsEl.querySelectorAll('.tab').forEach(tab => {
-    tab.addEventListener('click', () => {
-      tabsEl.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-      const id = tab.dataset.tab;
-      contentEl.querySelectorAll('.menu-category').forEach(c => {
-        c.classList.toggle('hidden', c.dataset.category !== id);
-      });
+  // ---- Tab switching with transition ----
+  tabsEl.addEventListener('click', (e) => {
+    const tab = e.target.closest('.tab');
+    if (!tab) return;
+
+    tabsEl.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    const id = tab.dataset.tab;
+
+    contentEl.querySelectorAll('.menu-category').forEach(c => {
+      if (c.dataset.category === id) {
+        c.classList.remove('hidden');
+        // Re-trigger card animations
+        c.querySelectorAll('.menu-item').forEach((item, i) => {
+          item.style.opacity = '0';
+          item.style.transform = 'translateY(16px)';
+          setTimeout(() => {
+            item.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+            item.style.opacity = '1';
+            item.style.transform = 'translateY(0)';
+          }, i * 60);
+        });
+      } else {
+        c.classList.add('hidden');
+      }
     });
   });
 
-  // Mobile nav
+  // ---- Mobile nav ----
   const toggle = document.getElementById('nav-toggle');
   const links = document.getElementById('nav-links');
   toggle.addEventListener('click', () => links.classList.toggle('open'));
@@ -78,33 +91,87 @@
     a.addEventListener('click', () => links.classList.remove('open'));
   });
 
-  // Highlight today
+  // ---- Highlight today ----
   const today = new Date().getDay();
   document.querySelectorAll('.hours-row').forEach(row => {
     if (parseInt(row.dataset.day) === today) row.classList.add('today');
   });
 
-  // Open/closed badge
+  // ---- Open/closed status ----
   function getStatus() {
     const now = new Date();
     const day = now.getDay();
     const time = now.getHours() * 60 + now.getMinutes();
     if (day === 4) return { open: false, text: "Fermé aujourd'hui (jeudi)" };
-    const lunch = time >= 660 && time < 840;
-    const dinner = time >= 1080 && time < 1320;
-    if (lunch || dinner) return { open: true, text: 'Ouvert maintenant 🟢' };
+    if (time >= 660 && time < 840) return { open: true, text: 'Ouvert maintenant 🟢' };
+    if (time >= 1080 && time < 1320) return { open: true, text: 'Ouvert maintenant 🟢' };
     if (time < 660) return { open: false, text: 'Ouvre à 11h' };
-    if (time < 1080) return { open: false, text: 'Ouvre à 18h' };
-    return { open: false, text: 'Fermé — on rouvre demain à 11h' };
+    if (time < 1080) return { open: false, text: 'Reprend à 18h' };
+    return { open: false, text: 'Fermé — à demain !' };
   }
   const badge = document.getElementById('status-badge');
   const s = getStatus();
   badge.textContent = s.text;
   badge.className = 'hours-status ' + (s.open ? 'open' : 'closed');
 
-  // Nav scroll
+  // ---- Nav scroll effect ----
   const nav = document.getElementById('nav');
+  let lastScroll = 0;
   window.addEventListener('scroll', () => {
-    nav.style.boxShadow = window.scrollY > 50 ? '0 1px 8px rgba(0,0,0,0.06)' : 'none';
+    nav.classList.toggle('scrolled', window.scrollY > 50);
+    lastScroll = window.scrollY;
   }, { passive: true });
+
+  // ---- Scroll reveal (Intersection Observer) ----
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.15,
+    rootMargin: '0px 0px -40px 0px'
+  });
+  reveals.forEach(el => observer.observe(el));
+
+  // ---- Counter animation ----
+  const counters = document.querySelectorAll('[data-count]');
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      const target = parseInt(el.dataset.count);
+      const suffix = el.dataset.suffix || '';
+      const duration = 1500;
+      const start = performance.now();
+
+      function tick(now) {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        // Ease out cubic
+        const ease = 1 - Math.pow(1 - progress, 3);
+        const current = Math.round(target * ease);
+        el.textContent = current + suffix;
+        if (progress < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+      counterObserver.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+  counters.forEach(el => counterObserver.observe(el));
+
+  // ---- Smooth parallax on hero dot grid ----
+  const heroBg = document.querySelector('.hero-bg');
+  if (heroBg && window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      if (y < window.innerHeight) {
+        heroBg.style.transform = `translateY(${y * 0.3}px)`;
+      }
+    }, { passive: true });
+  }
+
 })();

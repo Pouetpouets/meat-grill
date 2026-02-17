@@ -6,7 +6,7 @@
   <title>Meat Grill — Kebab & Grillades | Copponex</title>
   <meta name="description" content="Kebab artisanal, grillades et livraison à Copponex. Viande fraîche, sauces maison.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,11 +14,12 @@
   <!-- Nav -->
   <nav class="nav" id="nav">
     <div class="nav-inner">
-      <a href="#" class="logo">🔥 MEAT GRILL</a>
+      <a href="#" class="logo"><span class="logo-flame">🔥</span> MEAT GRILL</a>
       <div class="nav-links" id="nav-links">
         <a href="#menu">Menu</a>
-        <a href="#horaires">Horaires</a>
+        <a href="#story">Notre histoire</a>
         <a href="#livraison">Livraison</a>
+        <a href="#horaires">Horaires</a>
         <a href="#contact">Contact</a>
       </div>
       <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
@@ -29,54 +30,129 @@
 
   <!-- Hero -->
   <header class="hero">
+    <div class="hero-bg"></div>
     <div class="hero-content">
-      <p class="hero-tag" id="hero-tag"></p>
-      <h1 id="hero-title"></h1>
-      <p class="hero-sub" id="hero-sub"></p>
-      <div class="hero-actions">
-        <a href="#" id="hero-phone" class="btn btn-primary">📞 Commander</a>
-        <a href="#menu" class="btn btn-outline">Voir le menu</a>
+      <div class="hero-badge reveal">COPPONEX · HAUTE-SAVOIE</div>
+      <h1 class="hero-title">
+        <span class="line reveal reveal-delay-1">Le kebab</span>
+        <span class="line reveal reveal-delay-2">comme vous ne l'avez</span>
+        <span class="line accent reveal reveal-delay-3"><em>jamais</em> goûté.</span>
+      </h1>
+      <p class="hero-sub reveal reveal-delay-4">Viande grillée à la commande. Sauces maison.<br>Pain frais. Zéro compromis.</p>
+      <div class="hero-actions reveal reveal-delay-5">
+        <a href="tel:+33450000000" class="btn btn-primary"><span class="btn-icon">📞</span> Commander</a>
+        <a href="#menu" class="btn btn-ghost">Découvrir la carte ↓</a>
       </div>
     </div>
-    <div class="hero-scroll"><span>↓</span></div>
+    <div class="hero-scroll-indicator">
+      <div class="scroll-line"></div>
+    </div>
   </header>
 
-  <!-- Menu -->
-  <section class="section" id="menu">
+  <!-- Stats ribbon -->
+  <section class="ribbon">
     <div class="container">
-      <h2 class="section-title">Notre carte</h2>
-      <p class="section-sub">Les classiques, les incontournables, et quelques surprises.</p>
-      <div class="menu-tabs" id="menu-tabs"></div>
-      <div id="menu-content"></div>
-      <p class="menu-note">📸 Les prix et plats sont indicatifs — demandez la carte complète sur place !</p>
+      <div class="ribbon-grid">
+        <div class="ribbon-item reveal">
+          <span class="ribbon-number" data-count="5">0</span>
+          <span class="ribbon-label">Années d'expérience</span>
+        </div>
+        <div class="ribbon-divider"></div>
+        <div class="ribbon-item reveal reveal-delay-1">
+          <span class="ribbon-number" data-count="100" data-suffix="%">0</span>
+          <span class="ribbon-label">Viande fraîche</span>
+        </div>
+        <div class="ribbon-divider"></div>
+        <div class="ribbon-item reveal reveal-delay-2">
+          <span class="ribbon-number" data-count="7" data-suffix="km">0</span>
+          <span class="ribbon-label">Livraison gratuite</span>
+        </div>
+        <div class="ribbon-divider"></div>
+        <div class="ribbon-item reveal reveal-delay-3">
+          <span class="ribbon-number" data-count="6" data-suffix="/7j">0</span>
+          <span class="ribbon-label">Jours d'ouverture</span>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Livraison -->
-  <section class="section section-alt" id="livraison">
+  <!-- Story -->
+  <section class="section section-story" id="story">
     <div class="container">
-      <h2 class="section-title">Livraison</h2>
-      <p class="section-sub">On vient jusqu'à vous, dans un rayon de 7km.</p>
+      <div class="story-grid">
+        <div class="story-text">
+          <span class="section-tag reveal">NOTRE PHILOSOPHIE</span>
+          <h2 class="section-title reveal">Pas juste<br>un <em>kebab.</em></h2>
+          <p class="story-body reveal">On ne fait pas de la restauration rapide. On fait de la <strong>cuisine de rue, avec exigence.</strong> Chaque broche est préparée avec de la viande fraîche, jamais congelée. Nos sauces sont faites maison, chaque jour. Le pain est cuit sur place.</p>
+          <p class="story-body reveal">Le résultat ? Un kebab qui n'a rien à voir avec ce que vous connaissez.</p>
+        </div>
+        <div class="story-visual reveal">
+          <div class="story-card">
+            <div class="story-card-icon">🥩</div>
+            <h3>Viande fraîche</h3>
+            <p>Jamais congelée, préparée chaque jour</p>
+          </div>
+          <div class="story-card">
+            <div class="story-card-icon">🫙</div>
+            <h3>Sauces maison</h3>
+            <p>Recettes exclusives, faites sur place</p>
+          </div>
+          <div class="story-card">
+            <div class="story-card-icon">🫓</div>
+            <h3>Pain frais</h3>
+            <p>Cuit à la commande, croustillant</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu -->
+  <section class="section section-menu" id="menu">
+    <div class="container">
+      <span class="section-tag reveal">LA CARTE</span>
+      <h2 class="section-title reveal">Nos <em>spécialités</em></h2>
+      <p class="section-sub reveal">Les classiques, les incontournables, et quelques surprises.</p>
+      <div class="menu-tabs reveal" id="menu-tabs"></div>
+      <div id="menu-content"></div>
+      <p class="menu-note reveal">Les prix et plats sont indicatifs — la carte complète vous attend sur place.</p>
+    </div>
+  </section>
+
+  <!-- Marquee -->
+  <div class="marquee">
+    <div class="marquee-track">
+      <span>KEBAB · GRILLADES · BURGERS · FRITES MAISON · LIVRAISON · COPPONEX · </span>
+      <span>KEBAB · GRILLADES · BURGERS · FRITES MAISON · LIVRAISON · COPPONEX · </span>
+    </div>
+  </div>
+
+  <!-- Livraison -->
+  <section class="section section-delivery" id="livraison">
+    <div class="container">
+      <span class="section-tag reveal">LIVRAISON</span>
+      <h2 class="section-title reveal">On vient<br><em>jusqu'à vous.</em></h2>
+      <p class="section-sub reveal">Livraison gratuite dans un rayon de 7km, tous les soirs sauf lundi et jeudi.</p>
       <div class="delivery-grid">
-        <div class="delivery-card">
-          <span class="delivery-icon">🚗</span>
+        <div class="delivery-card reveal">
+          <div class="delivery-card-number">01</div>
           <h3>Gratuite</h3>
-          <p>Livraison offerte dans un rayon de 7km</p>
+          <p>Dans un rayon de 7km autour de Copponex</p>
         </div>
-        <div class="delivery-card">
-          <span class="delivery-icon">💰</span>
+        <div class="delivery-card reveal reveal-delay-1">
+          <div class="delivery-card-number">02</div>
           <h3>Minimum 30€</h3>
-          <p>Commande minimum pour la livraison</p>
+          <p>Commande minimum pour profiter de la livraison</p>
         </div>
-        <div class="delivery-card">
-          <span class="delivery-icon">🌙</span>
+        <div class="delivery-card reveal reveal-delay-2">
+          <div class="delivery-card-number">03</div>
           <h3>Tous les soirs</h3>
-          <p>Sauf lundi et jeudi — jusqu'en mai</p>
+          <p>Sauf lundi et jeudi — disponible jusqu'en mai</p>
         </div>
-        <div class="delivery-card">
-          <span class="delivery-icon">📞</span>
+        <div class="delivery-card reveal reveal-delay-3">
+          <div class="delivery-card-number">04</div>
           <h3>Par téléphone</h3>
-          <p>Appelez-nous pour commander</p>
+          <p>Appelez, commandez, on s'occupe du reste</p>
         </div>
       </div>
     </div>
@@ -85,16 +161,17 @@
   <!-- Horaires -->
   <section class="section" id="horaires">
     <div class="container">
-      <h2 class="section-title">Horaires</h2>
-      <div class="hours-wrapper">
+      <span class="section-tag reveal">HORAIRES</span>
+      <h2 class="section-title reveal">Quand venir <em>nous voir</em></h2>
+      <div class="hours-wrapper reveal">
         <div class="hours-card">
-          <div class="hours-row" data-day="1"><span class="day">Lundi</span><span class="time">11h–14h · 18h–22h</span></div>
-          <div class="hours-row" data-day="2"><span class="day">Mardi</span><span class="time">11h–14h · 18h–22h</span></div>
-          <div class="hours-row" data-day="3"><span class="day">Mercredi</span><span class="time">11h–14h · 18h–22h</span></div>
-          <div class="hours-row closed" data-day="4"><span class="day">Jeudi</span><span class="time">Fermé</span></div>
-          <div class="hours-row" data-day="5"><span class="day">Vendredi</span><span class="time">11h–14h · 18h–22h</span></div>
-          <div class="hours-row" data-day="6"><span class="day">Samedi</span><span class="time">11h–14h · 18h–22h</span></div>
-          <div class="hours-row" data-day="0"><span class="day">Dimanche</span><span class="time">11h–14h · 18h–22h</span></div>
+          <div class="hours-row" data-day="1"><span class="day">Lundi</span><span class="time">11h – 14h · 18h – 22h</span></div>
+          <div class="hours-row" data-day="2"><span class="day">Mardi</span><span class="time">11h – 14h · 18h – 22h</span></div>
+          <div class="hours-row" data-day="3"><span class="day">Mercredi</span><span class="time">11h – 14h · 18h – 22h</span></div>
+          <div class="hours-row closed" data-day="4"><span class="day">Jeudi</span><span class="time closed-text">Fermé</span></div>
+          <div class="hours-row" data-day="5"><span class="day">Vendredi</span><span class="time">11h – 14h · 18h – 22h</span></div>
+          <div class="hours-row" data-day="6"><span class="day">Samedi</span><span class="time">11h – 14h · 18h – 22h</span></div>
+          <div class="hours-row" data-day="0"><span class="day">Dimanche</span><span class="time">11h – 14h · 18h – 22h</span></div>
         </div>
         <div class="hours-status" id="status-badge"></div>
       </div>
@@ -104,21 +181,25 @@
   <!-- Contact -->
   <section class="section section-alt" id="contact">
     <div class="container">
-      <h2 class="section-title">Nous trouver</h2>
+      <span class="section-tag reveal">NOUS TROUVER</span>
+      <h2 class="section-title reveal">Venez <em>goûter.</em></h2>
       <div class="contact-grid">
-        <div class="contact-info">
+        <div class="contact-info reveal">
           <div class="contact-item">
-            <span>📍</span>
-            <div id="contact-address"></div>
+            <div class="contact-icon">📍</div>
+            <div>
+              <strong>31 Route de Saint Blaise</strong><br>
+              74350 Copponex, France
+            </div>
           </div>
           <div class="contact-item">
-            <span>💳</span>
-            <div>CB, Visa, Mastercard, Apple Pay, Espèces, Sans contact</div>
+            <div class="contact-icon">💳</div>
+            <div>CB, Visa, Mastercard, Apple Pay,<br>Espèces, Sans contact</div>
           </div>
-          <a href="https://maps.google.com/?q=31+Route+de+Saint+Blaise+74350+Copponex" target="_blank" class="btn btn-primary" style="margin-top:1rem;">📍 Itinéraire</a>
+          <a href="https://maps.google.com/?q=31+Route+de+Saint+Blaise+74350+Copponex" target="_blank" class="btn btn-primary" style="margin-top:1.5rem;">📍 Itinéraire Google Maps</a>
         </div>
-        <div class="contact-map">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2780.5!2d6.07!3d46.07!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDbCsDA0JzEyLjAiTiA2wrAwNCcxMi4wIkU!5e0!3m2!1sfr!2sfr!4v1" width="100%" height="300" style="border:0;border-radius:12px;" allowfullscreen loading="lazy"></iframe>
+        <div class="contact-map reveal reveal-delay-1">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2780.5!2d6.07!3d46.07!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDbCsDA0JzEyLjAiTiA2wrAwNCcxMi4wIkU!5e0!3m2!1sfr!2sfr!4v1" width="100%" height="350" style="border:0;border-radius:16px;" allowfullscreen loading="lazy"></iframe>
         </div>
       </div>
     </div>
@@ -127,9 +208,13 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <span class="logo">🔥 MEAT GRILL</span>
-      <p>Kebab artisanal à Copponex — Viande fraîche, fait maison.</p>
-      <p class="footer-copy">© 2025 Meat Grill. Tous droits réservés.</p>
+      <div class="footer-top">
+        <span class="logo"><span class="logo-flame">🔥</span> MEAT GRILL</span>
+        <p class="footer-tagline">Kebab artisanal à Copponex.<br>Viande fraîche, fait maison, depuis 2020.</p>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Meat Grill · Tous droits réservés</p>
+      </div>
     </div>
   </footer>
 

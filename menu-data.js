@@ -9,8 +9,8 @@ const MENU_DATA = {
       items: [
         { name: "Kebab", price: "8€", desc: "Viande grillée, salade, tomates, oignons, sauce au choix", badge: "Best-seller", img: "https://images.unsplash.com/photo-1633321702518-7feccafb94d5?w=400&h=300&fit=crop&q=80" },
         { name: "Sandwich Galette Kebab", price: "9€", desc: "En galette, viande kebab, crudités, sauce au choix", img: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=400&h=300&fit=crop&q=80" },
-        { name: "Sandwich Galette Steak", price: "9€", desc: "En galette, steak haché maison, crudités, sauce", badge: "Fait maison", img: "https://images.unsplash.com/photo-1619946794135-5bc917a27793?w=400&h=300&fit=crop&q=80" },
-        { name: "Sandwich Galette Filet de Bœuf", price: "9€", desc: "En galette, filet de bœuf, crudités, sauce", badge: "Fait maison", img: "https://images.unsplash.com/photo-1619946794135-5bc917a27793?w=400&h=300&fit=crop&q=80" }
+        { name: "Sandwich Galette Steak", price: "9€", desc: "En galette, steak haché maison, crudités, sauce", badge: "Fait maison", img: "https://images.unsplash.com/photo-1633321702518-7feccafb94d5?w=400&h=300&fit=crop&q=80" },
+        { name: "Sandwich Galette Filet de Bœuf", price: "9€", desc: "En galette, filet de bœuf, crudités, sauce", badge: "Fait maison", img: "https://images.unsplash.com/photo-1633321702518-7feccafb94d5?w=400&h=300&fit=crop&q=80" }
       ]
     },
     {

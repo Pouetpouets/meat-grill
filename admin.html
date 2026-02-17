@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meat Grill — Admin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f7f7f5; --surface: #fff; --border: #e8e5e0;
+      --text: #1a1a1a; --muted: #6b6560; --accent: #e06820;
+      --accent-light: #e0682012; --radius: 10px;
+      --font: 'Open Sans', sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font); background: var(--bg); color: var(--text); padding: 1.5rem; }
+
+    .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem; }
+    h1 { font-size: 1.5rem; }
+    .header-actions { display: flex; gap: 0.5rem; }
+
+    .btn {
+      padding: 0.55rem 1.2rem; border-radius: var(--radius);
+      font-family: var(--font); font-weight: 600; font-size: 0.85rem;
+      cursor: pointer; border: none; transition: 0.2s;
+    }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { background: #c45a18; }
+    .btn-outline { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    .btn-outline:hover { border-color: var(--accent); }
+    .btn-danger { background: #d63031; color: #fff; }
+    .btn-danger:hover { background: #b52728; }
+    .btn-small { padding: 0.35rem 0.8rem; font-size: 0.8rem; }
+
+    /* Info section */
+    .info-section {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.5rem; margin-bottom: 1.5rem;
+    }
+    .info-section h2 { font-size: 1.1rem; margin-bottom: 1rem; }
+    .field { margin-bottom: 0.8rem; }
+    .field label { display: block; font-size: 0.82rem; font-weight: 600; color: var(--muted); margin-bottom: 0.25rem; }
+    .field input {
+      width: 100%; padding: 0.5rem 0.75rem;
+      border: 1px solid var(--border); border-radius: var(--radius);
+      font-family: var(--font); font-size: 0.9rem;
+      transition: border-color 0.2s;
+    }
+    .field input:focus { outline: none; border-color: var(--accent); }
+    .fields-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+
+    /* Category */
+    .category {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); margin-bottom: 1rem; overflow: hidden;
+    }
+    .category-header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1rem 1.25rem; cursor: pointer;
+      border-bottom: 1px solid var(--border);
+      background: var(--accent-light);
+    }
+    .category-header h3 { font-size: 1rem; }
+    .category-header .actions { display: flex; gap: 0.4rem; }
+    .category-body { padding: 1rem 1.25rem; }
+    .category-body.collapsed { display: none; }
+
+    /* Item row */
+    .item-row {
+      display: grid; grid-template-columns: 2fr 1fr 3fr auto auto;
+      gap: 0.5rem; align-items: center;
+      padding: 0.5rem 0; border-bottom: 1px solid var(--border);
+    }
+    .item-row:last-child { border-bottom: none; }
+    .item-row input {
+      padding: 0.4rem 0.6rem; border: 1px solid var(--border);
+      border-radius: 6px; font-family: var(--font); font-size: 0.85rem;
+    }
+    .item-row input:focus { outline: none; border-color: var(--accent); }
+
+    .add-item {
+      margin-top: 0.75rem; padding: 0.4rem 0;
+      background: none; border: 1px dashed var(--border);
+      border-radius: 6px; width: 100%;
+      font-family: var(--font); font-size: 0.85rem; color: var(--muted);
+      cursor: pointer; transition: 0.2s;
+    }
+    .add-item:hover { border-color: var(--accent); color: var(--accent); }
+
+    .toast {
+      position: fixed; bottom: 2rem; right: 2rem;
+      background: #1a1a1a; color: #fff;
+      padding: 0.75rem 1.25rem; border-radius: var(--radius);
+      font-size: 0.88rem; font-weight: 600;
+      opacity: 0; transform: translateY(10px);
+      transition: 0.3s; pointer-events: none;
+    }
+    .toast.show { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 700px) {
+      .item-row { grid-template-columns: 1fr; }
+      .fields-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>🔥 Meat Grill — Admin</h1>
+    <div class="header-actions">
+      <button class="btn btn-outline" onclick="addCategory()">+ Catégorie</button>
+      <button class="btn btn-outline" onclick="preview()">👁 Prévisualiser</button>
+      <button class="btn btn-primary" onclick="save()">💾 Sauvegarder</button>
+    </div>
+  </div>
+
+  <div class="info-section">
+    <h2>Infos du restaurant</h2>
+    <div class="fields-row">
+      <div class="field"><label>Nom</label><input id="info-name" /></div>
+      <div class="field"><label>Depuis</label><input id="info-since" /></div>
+    </div>
+    <div class="field"><label>Slogan (avec &amp; pour séparer)</label><input id="info-tagline" /></div>
+    <div class="field"><label>Sous-titre</label><input id="info-subtitle" /></div>
+    <div class="fields-row">
+      <div class="field"><label>Adresse</label><input id="info-address" /></div>
+      <div class="field"><label>Ville</label><input id="info-city" /></div>
+    </div>
+    <div class="field"><label>Téléphone</label><input id="info-phone" placeholder="+33 4 50 00 00 00" /></div>
+  </div>
+
+  <div id="categories-container"></div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="menu-data.js"></script>
+  <script>
+    let data = JSON.parse(JSON.stringify(MENU_DATA));
+
+    // Load info fields
+    function loadInfo() {
+      document.getElementById('info-name').value = data.info.name || '';
+      document.getElementById('info-since').value = data.info.since || '';
+      document.getElementById('info-tagline').value = data.info.tagline || '';
+      document.getElementById('info-subtitle').value = data.info.subtitle || '';
+      document.getElementById('info-address').value = data.info.address || '';
+      document.getElementById('info-city').value = data.info.city || '';
+      document.getElementById('info-phone').value = data.info.phone || '';
+    }
+
+    function readInfo() {
+      data.info.name = document.getElementById('info-name').value;
+      data.info.since = document.getElementById('info-since').value;
+      data.info.tagline = document.getElementById('info-tagline').value;
+      data.info.subtitle = document.getElementById('info-subtitle').value;
+      data.info.address = document.getElementById('info-address').value;
+      data.info.city = document.getElementById('info-city').value;
+      data.info.phone = document.getElementById('info-phone').value;
+    }
+
+    function render() {
+      const container = document.getElementById('categories-container');
+      container.innerHTML = '';
+
+      data.categories.forEach((cat, ci) => {
+        const div = document.createElement('div');
+        div.className = 'category';
+        div.innerHTML = `
+          <div class="category-header" onclick="this.nextElementSibling.classList.toggle('collapsed')">
+            <h3 contenteditable="true" oninput="data.categories[${ci}].label=this.textContent">${cat.label}</h3>
+            <div class="actions">
+              <button class="btn btn-outline btn-small" onclick="event.stopPropagation();moveCategory(${ci},-1)">↑</button>
+              <button class="btn btn-outline btn-small" onclick="event.stopPropagation();moveCategory(${ci},1)">↓</button>
+              <button class="btn btn-danger btn-small" onclick="event.stopPropagation();removeCategory(${ci})">✕</button>
+            </div>
+          </div>
+          <div class="category-body">
+            ${cat.items.map((item, ii) => `
+              <div class="item-row">
+                <input value="${esc(item.name)}" placeholder="Nom" oninput="data.categories[${ci}].items[${ii}].name=this.value" />
+                <input value="${esc(item.price)}" placeholder="Prix" oninput="data.categories[${ci}].items[${ii}].price=this.value" />
+                <input value="${esc(item.desc)}" placeholder="Description" oninput="data.categories[${ci}].items[${ii}].desc=this.value" />
+                <input value="${esc(item.badge||'')}" placeholder="Badge" style="width:90px" oninput="data.categories[${ci}].items[${ii}].badge=this.value||undefined" />
+                <button class="btn btn-danger btn-small" onclick="removeItem(${ci},${ii})">✕</button>
+              </div>
+            `).join('')}
+            <button class="add-item" onclick="addItem(${ci})">+ Ajouter un produit</button>
+          </div>
+        `;
+        container.appendChild(div);
+      });
+    }
+
+    function esc(s) { return (s||'').replace(/"/g, '&quot;'); }
+
+    function addCategory() {
+      const name = prompt('Nom de la catégorie (ex: 🥤 Boissons)');
+      if (!name) return;
+      data.categories.push({
+        id: name.toLowerCase().replace(/[^a-z]/g, ''),
+        label: name,
+        items: []
+      });
+      render();
+    }
+
+    function removeCategory(i) {
+      if (!confirm(`Supprimer "${data.categories[i].label}" ?`)) return;
+      data.categories.splice(i, 1);
+      render();
+    }
+
+    function moveCategory(i, dir) {
+      const j = i + dir;
+      if (j < 0 || j >= data.categories.length) return;
+      [data.categories[i], data.categories[j]] = [data.categories[j], data.categories[i]];
+      render();
+    }
+
+    function addItem(ci) {
+      data.categories[ci].items.push({ name: '', price: '', desc: '' });
+      render();
+    }
+
+    function removeItem(ci, ii) {
+      data.categories[ci].items.splice(ii, 1);
+      render();
+    }
+
+    function save() {
+      readInfo();
+      // Generate menu-data.js content
+      const js = `// Auto-generated by admin panel — ${new Date().toLocaleString('fr-FR')}
+const MENU_DATA = ${JSON.stringify(data, null, 2)};
+
+if (typeof module !== 'undefined') module.exports = MENU_DATA;
+`;
+      // Download as file
+      const blob = new Blob([js], { type: 'application/javascript' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'menu-data.js';
+      a.click();
+      URL.revokeObjectURL(a.href);
+      toast('✅ menu-data.js téléchargé — remplacez le fichier sur votre site !');
+    }
+
+    function preview() {
+      readInfo();
+      // Save to localStorage for preview
+      localStorage.setItem('MENU_DATA_PREVIEW', JSON.stringify(data));
+      window.open('index.html?preview=1', '_blank');
+    }
+
+    function toast(msg) {
+      const el = document.getElementById('toast');
+      el.textContent = msg;
+      el.classList.add('show');
+      setTimeout(() => el.classList.remove('show'), 3000);
+    }
+
+    loadInfo();
+    render();
+  </script>
+</body>
+</html>

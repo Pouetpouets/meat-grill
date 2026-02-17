@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meat Grill — Kebab & Grillades | Copponex</title>
+  <meta name="description" content="Kebab artisanal, grillades et livraison à Copponex. Viande fraîche, sauces maison.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="logo">🔥 MEAT GRILL</a>
+      <div class="nav-links" id="nav-links">
+        <a href="#menu">Menu</a>
+        <a href="#horaires">Horaires</a>
+        <a href="#livraison">Livraison</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero-content">
+      <p class="hero-tag" id="hero-tag"></p>
+      <h1 id="hero-title"></h1>
+      <p class="hero-sub" id="hero-sub"></p>
+      <div class="hero-actions">
+        <a href="#" id="hero-phone" class="btn btn-primary">📞 Commander</a>
+        <a href="#menu" class="btn btn-outline">Voir le menu</a>
+      </div>
+    </div>
+    <div class="hero-scroll"><span>↓</span></div>
+  </header>
+
+  <!-- Menu -->
+  <section class="section" id="menu">
+    <div class="container">
+      <h2 class="section-title">Notre carte</h2>
+      <p class="section-sub">Les classiques, les incontournables, et quelques surprises.</p>
+      <div class="menu-tabs" id="menu-tabs"></div>
+      <div id="menu-content"></div>
+      <p class="menu-note">📸 Les prix et plats sont indicatifs — demandez la carte complète sur place !</p>
+    </div>
+  </section>
+
+  <!-- Livraison -->
+  <section class="section section-alt" id="livraison">
+    <div class="container">
+      <h2 class="section-title">Livraison</h2>
+      <p class="section-sub">On vient jusqu'à vous, dans un rayon de 7km.</p>
+      <div class="delivery-grid">
+        <div class="delivery-card">
+          <span class="delivery-icon">🚗</span>
+          <h3>Gratuite</h3>
+          <p>Livraison offerte dans un rayon de 7km</p>
+        </div>
+        <div class="delivery-card">
+          <span class="delivery-icon">💰</span>
+          <h3>Minimum 30€</h3>
+          <p>Commande minimum pour la livraison</p>
+        </div>
+        <div class="delivery-card">
+          <span class="delivery-icon">🌙</span>
+          <h3>Tous les soirs</h3>
+          <p>Sauf lundi et jeudi — jusqu'en mai</p>
+        </div>
+        <div class="delivery-card">
+          <span class="delivery-icon">📞</span>
+          <h3>Par téléphone</h3>
+          <p>Appelez-nous pour commander</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Horaires -->
+  <section class="section" id="horaires">
+    <div class="container">
+      <h2 class="section-title">Horaires</h2>
+      <div class="hours-wrapper">
+        <div class="hours-card">
+          <div class="hours-row" data-day="1"><span class="day">Lundi</span><span class="time">11h–14h · 18h–22h</span></div>
+          <div class="hours-row" data-day="2"><span class="day">Mardi</span><span class="time">11h–14h · 18h–22h</span></div>
+          <div class="hours-row" data-day="3"><span class="day">Mercredi</span><span class="time">11h–14h · 18h–22h</span></div>
+          <div class="hours-row closed" data-day="4"><span class="day">Jeudi</span><span class="time">Fermé</span></div>
+          <div class="hours-row" data-day="5"><span class="day">Vendredi</span><span class="time">11h–14h · 18h–22h</span></div>
+          <div class="hours-row" data-day="6"><span class="day">Samedi</span><span class="time">11h–14h · 18h–22h</span></div>
+          <div class="hours-row" data-day="0"><span class="day">Dimanche</span><span class="time">11h–14h · 18h–22h</span></div>
+        </div>
+        <div class="hours-status" id="status-badge"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section section-alt" id="contact">
+    <div class="container">
+      <h2 class="section-title">Nous trouver</h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-item">
+            <span>📍</span>
+            <div id="contact-address"></div>
+          </div>
+          <div class="contact-item">
+            <span>💳</span>
+            <div>CB, Visa, Mastercard, Apple Pay, Espèces, Sans contact</div>
+          </div>
+          <a href="https://maps.google.com/?q=31+Route+de+Saint+Blaise+74350+Copponex" target="_blank" class="btn btn-primary" style="margin-top:1rem;">📍 Itinéraire</a>
+        </div>
+        <div class="contact-map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2780.5!2d6.07!3d46.07!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDbCsDA0JzEyLjAiTiA2wrAwNCcxMi4wIkU!5e0!3m2!1sfr!2sfr!4v1" width="100%" height="300" style="border:0;border-radius:12px;" allowfullscreen loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <span class="logo">🔥 MEAT GRILL</span>
+      <p>Kebab artisanal à Copponex — Viande fraîche, fait maison.</p>
+      <p class="footer-copy">© 2025 Meat Grill. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script src="menu-data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

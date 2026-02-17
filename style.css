@@ -125,8 +125,8 @@ body {
 }
 .hero-doodles {
   position: absolute; inset: 0;
-  background: url('img/doodles.svg') center/cover no-repeat;
-  opacity: 0.12;
+  background: url('img/doodles.png') center/cover no-repeat;
+  opacity: 0.15;
   pointer-events: none;
 }
 .hero-content { position: relative; z-index: 2; padding: 2rem; max-width: 800px; }

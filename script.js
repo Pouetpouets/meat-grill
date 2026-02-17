@@ -11,17 +11,7 @@
     } catch(e) {}
   }
 
-  const info = MENU_DATA.info;
   const cats = MENU_DATA.categories;
-
-  // ---- Render hero ----
-  document.getElementById('hero-tag').textContent = `COPPONEX · DEPUIS ${info.since}`;
-  const parts = info.tagline.split('&');
-  document.getElementById('hero-phone').href = info.phone ? `tel:${info.phone}` : '#contact';
-
-  // ---- Render contact ----
-  document.getElementById('contact-address').innerHTML =
-    `<strong>${info.address}</strong><br>${info.city}`;
 
   // ---- Render menu ----
   const tabsEl = document.getElementById('menu-tabs');

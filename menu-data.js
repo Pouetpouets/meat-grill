@@ -1,5 +1,5 @@
 // ============================================
-// MENU DATA — Éditer ici ou via admin.html
+// MENU DATA — Menu officiel Meat Grill Copponex
 // ============================================
 const MENU_DATA = {
   categories: [
@@ -7,49 +7,78 @@ const MENU_DATA = {
       id: "kebabs",
       label: "🥙 Kebabs",
       items: [
-        { name: "Kebab Classique", price: "7.50€", desc: "Viande grillée, salade, tomates, oignons, sauce blanche", badge: "Best-seller", img: "https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=400&h=300&fit=crop" },
-        { name: "Kebab Fromage", price: "8.50€", desc: "Viande grillée, double fromage fondu, salade, sauce", img: "https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=400&h=300&fit=crop" },
-        { name: "Kebab Galette", price: "8.00€", desc: "En galette de blé, viande, crudités, sauce au choix", img: "https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=400&h=300&fit=crop" },
-        { name: "Kebab Meat Grill", price: "10.00€", desc: "Double viande, double fromage, oignons caramélisés, sauce spéciale", badge: "🔥 Spécialité", badgeType: "hot", img: "https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=400&h=300&fit=crop" },
-        { name: "Kebab Falafel", price: "8.00€", desc: "Falafels maison, houmous, crudités, sauce tahini", badge: "🌱 Végé", badgeType: "veg", img: "https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=400&h=300&fit=crop" }
+        { name: "Kebab", price: "8€", desc: "Viande grillée, salade, tomates, oignons, sauce au choix", badge: "Best-seller", img: "https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=400&h=300&fit=crop" },
+        { name: "Sandwich Galette Kebab", price: "9€", desc: "En galette, viande kebab, crudités, sauce au choix", img: "https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=400&h=300&fit=crop" },
+        { name: "Sandwich Galette Steak", price: "9€", desc: "En galette, steak haché maison, crudités, sauce", badge: "Fait maison", img: "https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=400&h=300&fit=crop" },
+        { name: "Sandwich Galette Filet de Bœuf", price: "9€", desc: "En galette, filet de bœuf, crudités, sauce", badge: "Fait maison", img: "https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=400&h=300&fit=crop" }
       ]
     },
     {
       id: "assiettes",
       label: "🍽️ Assiettes",
       items: [
-        { name: "Assiette Kebab", price: "11.00€", desc: "Viande grillée, frites, salade, sauce au choix", img: "https://images.unsplash.com/photo-1544025162-d76694265947?w=400&h=300&fit=crop" },
-        { name: "Assiette Mixte", price: "13.00€", desc: "Brochettes + kebab, riz, frites, salade", badge: "Populaire", img: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&h=300&fit=crop" },
-        { name: "Assiette Brochettes", price: "12.50€", desc: "2 brochettes de poulet ou agneau, riz, salade", img: "https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=400&h=300&fit=crop" }
+        { name: "Assiette Kebab", price: "12€", desc: "Viande kebab, frites, salade, sauce au choix", img: "https://images.unsplash.com/photo-1544025162-d76694265947?w=400&h=300&fit=crop" },
+        { name: "Assiette Poulet Mariné", price: "15€", desc: "Poulet mariné grillé, frites, salade", img: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&h=300&fit=crop" },
+        { name: "Assiette Steak", price: "15€", desc: "Steak haché maison & épicé, frites, salade", badge: "Fait maison", img: "https://images.unsplash.com/photo-1544025162-d76694265947?w=400&h=300&fit=crop" },
+        { name: "Assiette Köfte", price: "15€", desc: "Boulettes köfte maison, frites, salade", badge: "Fait maison", img: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&h=300&fit=crop" },
+        { name: "Assiette Côtelette d'Agneau", price: "20€", desc: "Côtelettes d'agneau grillées, frites, salade", badge: "Premium", badgeType: "hot", img: "https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=400&h=300&fit=crop" },
+        { name: "Assiette Filet de Bœuf", price: "24€", desc: "Filet de bœuf grillé, frites, salade", badge: "Premium", badgeType: "hot", img: "https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=400&h=300&fit=crop" },
+        { name: "Assiette Mixte", price: "20€", desc: "Assortiment de viandes grillées, frites, salade", img: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&h=300&fit=crop" }
       ]
     },
     {
       id: "burgers",
       label: "🍔 Burgers",
       items: [
-        { name: "Burger Classic", price: "9.00€", desc: "Steak haché, cheddar, salade, tomate, sauce burger", img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&h=300&fit=crop" },
-        { name: "Burger BBQ", price: "10.50€", desc: "Double steak, oignons croustillants, bacon, sauce BBQ", badge: "🔥 Copieux", badgeType: "hot", img: "https://images.unsplash.com/photo-1553979459-d2229ba7433b?w=400&h=300&fit=crop" },
-        { name: "Burger Chicken", price: "9.50€", desc: "Poulet croustillant, coleslaw, sauce miel-moutarde", img: "https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=400&h=300&fit=crop" }
+        { name: "Burger Nature", price: "9€", desc: "Steak haché maison, salade, tomate, oignon, sauce", img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&h=300&fit=crop" },
+        { name: "Burger Cheddar", price: "9.50€", desc: "Steak haché, cheddar fondu, salade, tomate, sauce", img: "https://images.unsplash.com/photo-1553979459-d2229ba7433b?w=400&h=300&fit=crop" },
+        { name: "Burger Épicée", price: "9.50€", desc: "Steak haché épicé, salade, tomate, sauce piquante", img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&h=300&fit=crop" },
+        { name: "Burger Oignons Frits", price: "9.50€", desc: "Steak haché, oignons frits croustillants, sauce", img: "https://images.unsplash.com/photo-1553979459-d2229ba7433b?w=400&h=300&fit=crop" },
+        { name: "Burger Deluxe", price: "11€ · Menu 14€", desc: "Notre burger signature avec tous les extras", badge: "🔥 Signature", badgeType: "hot", img: "https://images.unsplash.com/photo-1553979459-d2229ba7433b?w=400&h=300&fit=crop" }
+      ]
+    },
+    {
+      id: "tacos",
+      label: "🌮 Tacos",
+      items: [
+        { name: "Tacos 1 Viande", price: "10€ · Menu 13€", desc: "1 viande au choix : kebab, poulet, steak ou köfte", img: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&h=300&fit=crop" },
+        { name: "Maxi Tacos 2 Viandes", price: "13€ · Menu 16€", desc: "2 viandes au choix, fromage, sauce", badge: "Populaire", img: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&h=300&fit=crop" }
+      ]
+    },
+    {
+      id: "mezze",
+      label: "🥗 Mezze & Salades",
+      items: [
+        { name: "Houmous", price: "5€", desc: "Purée de pois chiche, sésame, huile d'olive et ail", img: "https://images.unsplash.com/photo-1577805947697-89e18249d767?w=400&h=300&fit=crop" },
+        { name: "Ezme", price: "5€", desc: "Salade de tomate épicée, oignon, persil & paprika", img: "https://images.unsplash.com/photo-1577805947697-89e18249d767?w=400&h=300&fit=crop" },
+        { name: "Haydari", price: "5€", desc: "Yaourt, aneth et menthe", img: "https://images.unsplash.com/photo-1577805947697-89e18249d767?w=400&h=300&fit=crop" },
+        { name: "Salade Composée", price: "9€", desc: "Crudités fraîches de saison", img: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=300&fit=crop" },
+        { name: "Salade de Poulet", price: "10€", desc: "Poulet grillé, crudités, sauce", img: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=300&fit=crop" }
       ]
     },
     {
       id: "sides",
-      label: "🍟 Accompagnements",
+      label: "🍟 Extras",
       items: [
-        { name: "Frites maison", price: "3.50€", desc: "Croustillantes, salées à point", img: "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=400&h=300&fit=crop" },
-        { name: "Nuggets (x6)", price: "4.50€", desc: "Poulet pané croustillant", img: "https://images.unsplash.com/photo-1562967914-608f82629710?w=400&h=300&fit=crop" },
-        { name: "Boissons", price: "2.00€", desc: "Coca, Fanta, Ice Tea, Ayran", img: "https://images.unsplash.com/photo-1581636625402-29b2a704ef13?w=400&h=300&fit=crop" }
+        { name: "Frites Maison", price: "5€", desc: "Fait maison, croustillantes", badge: "Fait maison", img: "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=400&h=300&fit=crop" },
+        { name: "Frites Tex Mex", price: "6€", desc: "Frites épicées façon tex-mex", img: "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=400&h=300&fit=crop" },
+        { name: "Nuggets (x6)", price: "5€", desc: "Poulet pané croustillant", img: "https://images.unsplash.com/photo-1562967914-608f82629710?w=400&h=300&fit=crop" },
+        { name: "Tenders (x4)", price: "5€", desc: "Filets de poulet panés", img: "https://images.unsplash.com/photo-1562967914-608f82629710?w=400&h=300&fit=crop" },
+        { name: "Sticks Mozzarella (x6)", price: "6€", desc: "Mozzarella panée croustillante", img: "https://images.unsplash.com/photo-1531749668029-2db88e4276c7?w=400&h=300&fit=crop" },
+        { name: "Menu Kids", price: "8€", desc: "Burger steak ou poulet cheddar + Caprisun + Mini Surpriz", badge: "- 12 ans" }
       ]
     }
   ],
 
+  sauces: ["Ketchup", "Mayonnaise", "Algérienne", "Sauce Blanche", "Harissa", "Barbecue", "Brazil", "Samurai", "Gruyère", "Curry", "Moutarde", "Biggy"],
+
   info: {
     name: "Meat Grill",
-    tagline: "Kebab artisanal & grillades",
+    tagline: "Kebab & Grillades",
     address: "31 Route de Saint Blaise",
     city: "74350 Copponex, France",
     phone: "",
-    subtitle: "Viande fraîche, sauces maison, pain cuit sur place.",
+    subtitle: "No Meat No Life",
     since: "2020"
   }
 };

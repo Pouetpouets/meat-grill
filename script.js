@@ -63,6 +63,17 @@
     contentEl.appendChild(grid);
   });
 
+  // ---- Sauces bar ----
+  if (MENU_DATA.sauces) {
+    const saucesBar = document.getElementById('sauces-bar');
+    saucesBar.innerHTML = `
+      <h3>🔥 Nos Sauces</h3>
+      <div class="sauces-list">
+        ${MENU_DATA.sauces.map(s => `<span class="sauce-tag">${s}</span>`).join('')}
+      </div>
+    `;
+  }
+
   // ---- Tab switching with transition ----
   tabsEl.addEventListener('click', (e) => {
     const tab = e.target.closest('.tab');

@@ -254,43 +254,28 @@ body {
   color: rgba(255,255,255,0.6);
 }
 
-/* ---- REVIEWS ---- */
-.section-reviews {
-  padding: 4rem 0;
-  background: var(--bg);
-  text-align: center;
-}
-.reviews-card {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 2.5rem 4rem;
+/* ---- REVIEWS (inline in contact) ---- */
+.reviews-inline {
+  display: flex; align-items: center; gap: 1rem;
+  padding: 1.2rem 1.5rem;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 20px;
-  box-shadow: var(--shadow-md);
+  border-radius: var(--radius);
+  margin-bottom: 0.5rem;
 }
-.reviews-stars { display: flex; gap: 0.25rem; font-size: 2rem; line-height: 1; }
+.reviews-stars { display: flex; gap: 0.15rem; font-size: 1.3rem; line-height: 1; }
 .star { color: var(--yellow); }
 .star-almost {
   background: linear-gradient(90deg, var(--yellow) 80%, #3a3530 80%);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-.reviews-score {
+.reviews-text { font-size: 0.9rem; color: var(--text-muted); }
+.reviews-text strong {
   font-family: var(--font-display);
-  font-size: 3.5rem; font-weight: 400;
+  font-size: 1.3rem; color: var(--text);
   letter-spacing: 0.02em;
-  color: var(--text); line-height: 1;
 }
-.reviews-max { font-size: 1.5rem; color: var(--text-muted); }
-.reviews-label { font-size: 0.9rem; color: var(--text-muted); font-weight: 600; }
-.reviews-link {
-  margin-top: 0.5rem; font-size: 0.85rem; font-weight: 700;
-  color: var(--accent); text-decoration: none; transition: opacity 0.2s;
-}
-.reviews-link:hover { opacity: 0.7; }
 
 /* ---- STORY ---- */
 .section-story {
@@ -513,7 +498,10 @@ body {
 .delivery-card p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; }
 
 /* ---- HOURS ---- */
-.hours-wrapper { max-width: 520px; }
+.section-hours { text-align: center; }
+.section-hours .section-tag,
+.section-hours .section-title { text-align: center; }
+.hours-wrapper { max-width: 520px; margin: 0 auto; text-align: left; }
 .hours-card {
   background: var(--surface);
   border: 1px solid var(--border);

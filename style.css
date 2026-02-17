@@ -120,10 +120,14 @@ body {
   position: absolute; inset: 0;
   background:
     radial-gradient(ellipse at 30% 20%, var(--warm) 0%, transparent 50%),
-    radial-gradient(ellipse at 70% 80%, var(--accent-light) 0%, transparent 40%),
-    radial-gradient(circle, #d5cec4 0.8px, transparent 0.8px);
-  background-size: 100% 100%, 100% 100%, 32px 32px;
+    radial-gradient(ellipse at 70% 80%, var(--accent-light) 0%, transparent 40%);
   opacity: 0.6;
+}
+.hero-doodles {
+  position: absolute; inset: 0;
+  background: url('img/doodles.svg') center/contain no-repeat;
+  opacity: 0.12;
+  pointer-events: none;
 }
 .hero-content { position: relative; z-index: 2; padding: 2rem; max-width: 800px; }
 .hero-badge {

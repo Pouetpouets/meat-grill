@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" fill="none">
+  <style>
+    .line { stroke: #1a1714; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .fill-red { fill: #d4574a; }
+    .fill-green { fill: #5a9e6f; }
+    .fill-yellow { fill: #e8b84a; }
+    .fill-cream { fill: #f0dcc0; }
+    .fill-brown { fill: #8b6040; }
+    .fill-pink { fill: #e88a9a; }
+    .fill-white { fill: #fefcf9; }
+  </style>
+
+  <!-- TOMATO — top left -->
+  <g transform="translate(80, 60) rotate(-12)">
+    <circle cx="30" cy="32" r="26" class="fill-red line"/>
+    <path d="M22 10 Q30 2 38 10" class="line" stroke="#5a9e6f" stroke-width="2.5"/>
+    <path d="M18 8 Q14 -2 18 -4" class="line" stroke="#5a9e6f" stroke-width="2"/>
+    <path d="M42 8 Q46 -2 42 -4" class="line" stroke="#5a9e6f" stroke-width="2"/>
+    <path d="M20 26 Q30 22 40 26" class="line" stroke-width="1.5" opacity="0.3"/>
+  </g>
+
+  <!-- ONION RINGS — top center-right -->
+  <g transform="translate(920, 40) rotate(8)">
+    <ellipse cx="25" cy="20" rx="22" ry="16" class="fill-cream line"/>
+    <ellipse cx="25" cy="20" rx="14" ry="10" class="line" stroke-width="1.8"/>
+    <ellipse cx="25" cy="20" rx="7" ry="5" class="line" stroke-width="1.5" opacity="0.5"/>
+  </g>
+
+  <!-- PARSLEY LEAF — top left area -->
+  <g transform="translate(250, 30) rotate(20)">
+    <path d="M0 20 Q8 0 20 4 Q32 -2 28 14 Q36 10 32 22 Q24 30 16 26 Q8 32 0 20Z" class="fill-green line"/>
+    <path d="M14 24 L16 8" class="line" stroke-width="1.5" stroke="#5a9e6f"/>
+  </g>
+
+  <!-- MEAT SKEWER — right side -->
+  <g transform="translate(1050, 180) rotate(-25)">
+    <line x1="0" y1="0" x2="8" y2="140" class="line" stroke="#8b6040" stroke-width="3"/>
+    <rect x="-8" y="15" width="24" height="20" rx="4" class="fill-brown line" transform="rotate(5, 4, 25)"/>
+    <rect x="-6" y="42" width="22" height="18" rx="4" class="fill-brown line" transform="rotate(-3, 5, 51)"/>
+    <rect x="-7" y="68" width="23" height="20" rx="4" class="fill-brown line" transform="rotate(4, 5, 78)"/>
+    <rect x="-5" y="96" width="20" height="17" rx="4" class="fill-brown line" transform="rotate(-2, 5, 104)"/>
+  </g>
+
+  <!-- HOT PEPPER — left side -->
+  <g transform="translate(40, 380) rotate(15)">
+    <path d="M5 40 Q0 20 8 8 Q14 0 18 8 Q22 20 16 40 Q12 50 5 40Z" class="fill-red line"/>
+    <path d="M10 8 Q8 -2 12 -6 Q16 -2 14 4" class="line" stroke="#5a9e6f" stroke-width="2"/>
+  </g>
+
+  <!-- PITA BREAD — bottom left -->
+  <g transform="translate(60, 650) rotate(-8)">
+    <ellipse cx="45" cy="25" rx="44" ry="22" class="fill-cream line"/>
+    <path d="M15 22 Q45 12 75 22" class="line" stroke-width="1.5" opacity="0.35"/>
+    <path d="M20 30 Q45 36 70 30" class="line" stroke-width="1.2" opacity="0.25"/>
+  </g>
+
+  <!-- LEMON WEDGE — bottom center -->
+  <g transform="translate(480, 720) rotate(5)">
+    <path d="M0 30 Q25 -5 50 30Z" class="fill-yellow line"/>
+    <path d="M10 26 L25 10" class="line" stroke-width="1.3" opacity="0.4"/>
+    <path d="M25 10 L40 26" class="line" stroke-width="1.3" opacity="0.4"/>
+    <path d="M25 10 L25 28" class="line" stroke-width="1.3" opacity="0.4"/>
+  </g>
+
+  <!-- TOMATO SLICE — right side middle -->
+  <g transform="translate(1100, 450) rotate(-20)">
+    <circle cx="22" cy="22" r="20" class="fill-red line"/>
+    <circle cx="22" cy="22" r="14" class="line" stroke-width="1.2" opacity="0.3"/>
+    <path d="M14 14 L22 22 L30 14" class="line" stroke-width="1.2" opacity="0.3"/>
+    <path d="M14 30 L22 22 L30 30" class="line" stroke-width="1.2" opacity="0.3"/>
+  </g>
+
+  <!-- GARLIC — top right -->
+  <g transform="translate(1080, 30) rotate(10)">
+    <path d="M10 35 Q0 20 10 8 Q18 0 25 8 Q32 0 38 8 Q48 20 38 35 Q25 42 10 35Z" class="fill-white line"/>
+    <path d="M18 10 L20 28" class="line" stroke-width="1.3" opacity="0.3"/>
+    <path d="M30 10 L28 28" class="line" stroke-width="1.3" opacity="0.3"/>
+    <path d="M24 4 Q22 -4 26 -8" class="line" stroke="#5a9e6f" stroke-width="2"/>
+  </g>
+
+  <!-- LETTUCE LEAF — bottom right -->
+  <g transform="translate(950, 680) rotate(-15)">
+    <path d="M0 30 Q10 0 30 5 Q50 -5 55 20 Q60 35 40 40 Q20 50 0 30Z" class="fill-green line"/>
+    <path d="M10 28 Q25 15 45 22" class="line" stroke-width="1.3" opacity="0.4"/>
+    <path d="M15 35 Q30 25 42 30" class="line" stroke-width="1.2" opacity="0.3"/>
+  </g>
+
+  <!-- SMALL HERB — center top -->
+  <g transform="translate(580, 15) rotate(-5)">
+    <path d="M8 22 L10 5" class="line" stroke="#5a9e6f" stroke-width="2"/>
+    <path d="M10 12 Q16 6 14 14" class="line" stroke="#5a9e6f" stroke-width="1.8"/>
+    <path d="M10 8 Q4 2 6 10" class="line" stroke="#5a9e6f" stroke-width="1.8"/>
+  </g>
+
+  <!-- CHEESE WEDGE — left middle -->
+  <g transform="translate(20, 540) rotate(10)">
+    <path d="M0 30 L45 30 L45 0 Z" class="fill-yellow line"/>
+    <circle cx="15" cy="22" r="3" class="line" fill="#e8b84a" opacity="0.5"/>
+    <circle cx="30" cy="18" r="2.5" class="line" fill="#e8b84a" opacity="0.5"/>
+    <circle cx="22" cy="26" r="2" class="line" fill="#e8b84a" opacity="0.5"/>
+  </g>
+
+  <!-- SMALL ONION — bottom center-left -->
+  <g transform="translate(280, 740) rotate(-10)">
+    <path d="M8 28 Q0 15 10 5 Q20 -2 28 5 Q38 15 30 28 Q20 35 8 28Z" class="fill-pink line"/>
+    <path d="M19 5 Q18 -2 20 -6" class="line" stroke="#5a9e6f" stroke-width="1.8"/>
+    <path d="M12 18 Q19 14 26 18" class="line" stroke-width="1.2" opacity="0.3"/>
+  </g>
+
+  <!-- MEAT CHUNK — right bottom -->
+  <g transform="translate(1090, 620) rotate(12)">
+    <path d="M5 25 Q0 10 10 3 Q22 -2 30 8 Q36 18 28 28 Q18 34 5 25Z" class="fill-brown line"/>
+    <path d="M12 10 Q18 14 24 10" class="line" stroke-width="1.3" opacity="0.35"/>
+  </g>
+
+  <!-- SMALL LEAF — right top area -->
+  <g transform="translate(780, 25) rotate(30)">
+    <path d="M0 12 Q6 0 14 4 Q18 12 10 16 Q4 18 0 12Z" class="fill-green line"/>
+    <path d="M4 12 L10 6" class="line" stroke-width="1.2" stroke="#5a9e6f"/>
+  </g>
+
+  <!-- SAUCE DOLLOP — bottom far right -->
+  <g transform="translate(780, 740) rotate(-5)">
+    <ellipse cx="20" cy="15" rx="20" ry="12" class="fill-cream line"/>
+    <path d="M12 10 Q20 5 28 10" class="line" stroke-width="1.2" opacity="0.25"/>
+  </g>
+
+  <!-- KEBAB WRAP cross-section — top center -->
+  <g transform="translate(420, 20) rotate(-8)">
+    <circle cx="20" cy="20" r="18" class="fill-cream line"/>
+    <circle cx="14" cy="16" r="4" class="fill-brown" opacity="0.6"/>
+    <circle cx="24" cy="14" r="3.5" class="fill-red" opacity="0.5"/>
+    <circle cx="20" cy="24" r="3" class="fill-green" opacity="0.5"/>
+    <circle cx="28" cy="22" r="3.5" class="fill-brown" opacity="0.6"/>
+  </g>
+
+  <!-- SMALL PEPPER — left bottom -->
+  <g transform="translate(180, 720) rotate(25)">
+    <path d="M4 0 Q0 10 2 22 Q4 28 8 22 Q10 10 6 0Z" class="fill-green line"/>
+    <path d="M4 0 Q5 -4 6 0" class="line" stroke-width="1.5"/>
+  </g>
+
+</svg>

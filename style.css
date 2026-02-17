@@ -125,7 +125,7 @@ body {
 }
 .hero-doodles {
   position: absolute; inset: 0;
-  background: url('img/doodles.svg') center/contain no-repeat;
+  background: url('img/doodles.svg') center/cover no-repeat;
   opacity: 0.12;
   pointer-events: none;
 }

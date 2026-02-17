@@ -77,7 +77,7 @@ const MENU_DATA = {
     tagline: "Kebab & Grillades",
     address: "31 Route de Saint Blaise",
     city: "74350 Copponex, France",
-    phone: "",
+    phone: "+33771662153",
     subtitle: "No Meat No Life",
     since: "2020"
   }

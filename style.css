@@ -114,9 +114,9 @@ body {
 }
 .hero-kebab {
   position: absolute;
-  right: 5%;
+  left: 50%;
   top: 50%;
-  transform: translateY(-50%) rotate(8deg);
+  transform: translate(-50%, -50%) rotate(8deg);
   height: 90vh;
   max-height: 900px;
   opacity: 0.35;
@@ -127,7 +127,7 @@ body {
 }
 @media (max-width: 768px) {
   .hero-kebab {
-    right: -10%;
+    left: 50%;
     height: 70vh;
     opacity: 0.2;
   }
